@@ -1,6 +1,7 @@
 import hashlib
 from src import app, db
 from src.models import Account
+import cloudinary.uploader
 
 
 def auth_user(username, password, role=None):
@@ -16,3 +17,15 @@ def auth_user(username, password, role=None):
 
 def get_user_by_id(id):
     return Account.query.get(id)
+
+def add_user(username, password, avatar=None):
+    password = str(hashlib.md5(password.strip().encode('utf-8')).hexdigest())
+
+    u = Account(username=username.strip(), password=password)
+
+    if avatar:
+        res = cloudinary.uploader.upload(avatar)
+        u.avatar = res.get('secure_url')
+
+    db.session.add(u)
+    db.session.commit()

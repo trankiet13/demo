@@ -9,6 +9,10 @@
 
 <h1 class="text-center text-danger mt-2">ĐĂNG NHẬP NGƯỜI DÙNG</h1>
 
+{% if err_msg %}
+    <div class="text-danger">{{ err_msg }}</div>
+{% endif %}
+
 <form method="post" action="/login">
     <div class="form-floating mb-3 mt-3">
         <input type="text" class="form-control" id="username" placeholder="Tên đăng nhập" name="username">

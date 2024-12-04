@@ -25,6 +25,7 @@ def admin_login():
 
 @app.route("/login", methods=['get', 'post'])
 def login_process():
+    err_msg = None
     if request.method.__eq__('POST'):
         username = request.form.get('username')
         password = request.form.get('password')
@@ -32,8 +33,31 @@ def login_process():
         if u:
             login_user(u)
             return redirect('/')
+        else:
+            err_msg = "Tài khoản hoặc mật khẩu không đúng"
 
-    return render_template('login.html')
+    return render_template('login.html',err_msg = err_msg)
+
+@app.route('/register', methods=['get', 'post'])
+def register_process():
+    err_msg = None
+    if request.method.__eq__('POST'):
+        password = request.form.get('password')
+        confirm = request.form.get('confirm')
+        print(request.form)
+        if password.__eq__(confirm):
+            data = request.form.copy()
+            del data['confirm']
+
+            avatar = request.files.get('avatar')
+
+            dao.add_user(avatar=avatar, **data)
+
+            return redirect('/login')
+        else:
+            err_msg = 'Mật khẩu KHÔNG khớp!'
+
+    return render_template('register.html', err_msg=err_msg)
 
 @app.route("/logout", methods=['get', 'post'])
 def logout_process():
