@@ -1,0 +1,213 @@
+{% extends 'layout/non_base.html' %}
+
+{% block title %}Cashier{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/employee/cashier.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout/status_tags.css') }}">
+{% endblock %}
+
+{% block js_body %}
+    <script src="{{ url_for('static', filename='js/employee/cashier.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="{{ url_for('index') }}" class="logo">
+            <div class="logo-name">F & H</div>
+        </a>
+        <ul class="side-menu">
+            <li class="active" id="bill-btn"><a href="javascript:void(0)"><i class="bx fa-solid fa-newspaper"></i>Manage</a></li>
+            <li id="manage-btn"><a href="javascript:void(0)"><i class="bx fa-solid fa-bars-progress"></i>Create bill</a></li>
+            <li><a href="{{ url_for('profile_settings', slug=current_user.slug) }}"><i class="bx fa-solid fa-user"></i>Profile</a></li>
+            <li><a href="{{ url_for('account_settings', slug=current_user.slug) }}"><i class="bx fa-solid fa-gear"></i>Settings</a></li>
+            <li><a href="{{ url_for('signout') }}" class="logout"><i class="bx fa-solid fa-right-from-bracket"></i>Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+
+            <a href="javascript:void(0)" class="profile" style="display: flex; align-items: center">
+                <img src="{{ current_user.avatar }}" alt="Avatar" style="margin-right: 8px">{{ current_user.user.full_name }}
+            </a>
+        </nav>
+        <!-- End of Navbar -->
+
+        <h1 class="bill-title" style="text-transform: uppercase">Manage a bill list</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category != 'message' %}
+                        <div class="alert alert-{{ category }} text-center mt-3 text-center"
+                             style="width: 50%; margin: 16px auto;">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="table-bill-issued">
+            <table>
+                <tr class="tr-title">
+                    <th>ID</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Day of the examination</th>
+                    <th>Created date</th>
+                    <th>Total</th>
+                </tr>
+
+                {% if not bill_list %}
+                    <tr>
+                        <td colspan="6">There are no items here.</td>
+                    </tr>
+                {% else %}
+                    {% for bill in bill_list %}
+                        <tr>
+                            <td>{{ bill.id }}</td>
+                            <td>{{ bill.patient.user.first_name }}</td>
+                            <td>{{ bill.patient.user.last_name }}</td>
+                            <td>{{ bill.examination_date.strftime('%Y-%m-%d') }}</td>
+                            <td>{{ bill.created_date }}</td>
+                            <td>{{ '$ {:,.2f}'.format(bill.total_price) }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+
+        <h1 class="manage-title" style="text-transform: uppercase">Create a bill</h1>
+        <div class="table-manage">
+            <table>
+                <tr class="tr-title">
+                    <th>ID</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Day of the examination</th>
+                    <th>Date created</th>
+                    <th>Examination package</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+                {% if not medical_bills_list %}
+                    <tr>
+                        <td colspan="8">There are no items here.</td>
+                    </tr>
+                {% else %}
+                    {% for medical_bill in medical_bills_list %}
+                        <tr>
+                            <td id="medical_bill_id_{{ loop.index0 }}">{{ medical_bill.id }}</td>
+                            <td>{{ medical_bill.patient.user.first_name }}</td>
+                            <td>{{ medical_bill.patient.user.last_name }}</td>
+                            <td id="medical_bill_examination_date_{{ loop.index0 }}">{{ medical_bill.examination_date.strftime('%Y-%m-%d') }}</td>
+                            <td>{{ medical_bill.created_date.strftime('%Y-%m-%d') }}</td>
+                            <td>{{ medical_bill.packages.packages_name }}</td>
+                            <input type="hidden" value="{{ medical_bill.patient.user.full_name }}" id="medical_bill_full_name_{{ loop.index0 }}"/>
+                            <input type="hidden" value="{{ medical_bill.symptoms }}" id="medical_bill_symptoms_{{ loop.index0 }}"/>
+                            <input type="hidden" value="{{ medical_bill.diagnostic }}" id="medical_bill_diagnostic_{{ loop.index0 }}"/>
+                            <input type="hidden" value="{{ medical_bill.patient.id }}" id="medical_bill_patient_{{ loop.index0 }}"/>
+                            <td>
+                                <!-- Red: critical-low -->
+                                <!-- Green: positive-medium -->
+                                <!-- Yellow: attention-low -->
+                                <div class="status-tag {% if medical_bill.is_pay %}positive-medium{% else %}attention-low{% endif %}">
+                                    <i class="highlight {% if medical_bill.is_pay %}positive-medium{% else %}attention-low{% endif %}"
+                                       style="--iteration-count: infinite;"></i>
+                                    <p class="status-tag__txt bac-l-stack-xs">
+                                        {% if medical_bill.is_pay %}
+                                            Accpeted
+                                        {% else %}
+                                            Pending
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="detail">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                                <button {% if medical_bill.is_pay %}style="display: none;"{% endif %} class="invoice">
+                                    <i class="fa-solid fa-print"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+
+        <div class="modal-detail">
+            <table id="medical-bill-details">
+                <tr>
+                    <th colspan="6" style="background: var(--primary-color)">MEDICAL BILL</th>
+                </tr>
+
+                <tr>
+                    <td id="patient_name" colspan="3">Patient Name:</td>
+                    <td id="day_of_exam" colspan="3">Examination day:</td>
+                </tr>
+
+                <tr>
+                    <td id="symptoms" colspan="3">Symptoms:</td>
+                    <td id="diagnostic" colspan="3">Diagnostic:</td>
+                </tr>
+
+                <tr class="tr-title">
+                    <th>ID</th>
+                    <th>Medicine</th>
+                    <th>Unit</th>
+                    <th>Amount</th>
+                    <th>Directions</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="modal-print">
+            <form method="post" action="{{ url_for('employee_cashier') }}">
+                <table>
+                    <input type="hidden" value="" name="patient_id" id="patient_id"/>
+                    <input type="hidden" value="" name="medical_bill_id" id="medical_bill_id"/>
+                    <tr class="tr-title">
+                        <th colspan="6">Bill</th>
+                    </tr>
+
+                    <tr>
+                        <td id="bill_name" colspan="3">Name:</td>
+                        <td id="bill_day_of_exam" colspan="3">Day of the examination:</td>
+                        <input type="hidden" value="" name="examination_date" id="examination_date"/>
+                    </tr>
+
+                    <tr>
+                        <td id="bill_fee" colspan="3">Examination fee:</td>
+                        <input type="hidden" value="" name="pre_examination" id="pre_examination"/>
+                        <td id="bill_medicine_fee" colspan="3">Medicine money:</td>
+                        <input type="hidden" value="" name="medicine_money" id="medicine_money">
+                    </tr>
+
+                    <tr>
+                        <td id="bill_total_price" colspan="6">Total:</td>
+                        <input type="hidden" value="total_price" name="total_price" id="total_price"/>
+                    </tr>
+
+                    <tr class="tr-button">
+                        <th colspan="6">
+                            <button type="submit" class="btn btn-success w-25">Pay</button>
+                        </th>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+{% endblock %}

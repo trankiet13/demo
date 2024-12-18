@@ -1,0 +1,272 @@
+{% extends 'layout/non_base.html' %}
+
+{% block title %}Nurse{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/employee/nurse.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout/status_tags.css') }}">
+{% endblock %}
+
+{% block js_body %}
+    <script src="{{ url_for('static', filename='js/employee/nurse.js') }}"></script>
+    <script>
+        window.onload = function () {
+            const modalTitle = document.querySelector('.modal-title')
+            const modalBody = document.querySelector('.modal-body')
+            const btnConfirm = document.querySelector('.btn-modal-confirm')
+
+            btnConfirm.setAttribute('form', 'create-examination-form')
+            modalTitle.innerHTML = 'CREATE AN EXAMINATION LIST'
+            modalBody.innerHTML = 'Are you sure you want to create?'
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="{{ url_for('index') }}" class="logo">
+            <div class="logo-name">F & H</div>
+        </a>
+        <ul class="side-menu">
+            <li id="appointment-list-btn" class="active"><a href="javascript:void(0)"><i
+                    class="bx fa-solid fa-bars-progress"></i>Appointment list</a></li>
+            <li id="create-examination-btn"><a href="javascript:void(0)"><i class="bx fa-solid fa-list"></i>Create list</a>
+            </li>
+            <li id="appointment-btn">
+                <a href="javascript:void(0)"><i class="bx fa-solid fa-calendar-check"></i>Appointment</a>
+            </li>
+            <li><a href="{{ url_for('profile_settings', slug=current_user.slug) }}"><i class="bx fa-solid fa-user"></i>Profile</a>
+            </li>
+            <li><a href="{{ url_for('account_settings', slug=current_user.slug) }}"><i class="bx fa-solid fa-gear"></i>Settings</a>
+            </li>
+            <li><a href="{{ url_for('signout') }}" class="logout"><i
+                    class="bx fa-solid fa-right-from-bracket"></i>Logout</a></li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <form action="">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+            {#            <a href="javascript:void(0)" class="profile" style="display: flex; align-items: center">#}
+            {#                <img src="{{ current_user.avatar }}" alt="Avatar" style="margin-right: 8px">#}
+            {#                {{ current_user.user.full_name }}#}
+            {#            </a>#}
+        </nav>
+
+        <!-- End of Navbar -->
+        <h1 style="text-transform: uppercase" class="manage-title">appointment list</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category != 'message' %}
+                        <div class="alert alert-{{ category }} text-center mt-3 text-center"
+                             style="width: 50%; margin: 16px auto;">{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="table-manage">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Gender</th>
+                    <th>Phone</th>
+                    <th>Registration Date</th>
+                    <th>Examination day</th>
+                    <th>Examination time</th>
+                    <th>Status</th>
+                </tr>
+
+                {% if not examination_schedule_list %}
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                {% else %}
+                    {% for examination_schedule in examination_schedule_list %}
+                        <tr>
+                            <td>{{ examination_schedule.id }}</td>
+                            <td>{{ examination_schedule.first_name }}</td>
+                            <td>{{ examination_schedule.last_name }}</td>
+                            <td>{{ examination_schedule.gender }}</td>
+                            <td>{{ examination_schedule.phone_number }}</td>
+                            <td>{{ examination_schedule.created_date }}</td>
+                            <td>{{ examination_schedule.examination_date.strftime('%Y-%m-%d') }}</td>
+                            <td>{{ examination_schedule.examination_date.strftime('%H:%M') }}</td>
+                            <td>
+                                <!-- Red: critical-low -->
+                                <!-- Green: positive-medium -->
+                                <!-- Yellow: attention-low -->
+                                <div class="status-tag {% if examination_schedule.status %}positive-medium{% else %}attention-low{% endif %}">
+                                    <i class="highlight {% if examination_schedule.status %}positive-medium{% else %}attention-low{% endif %}"
+                                       style="--iteration-count: infinite;"></i>
+                                    <p class="status-tag__txt bac-l-stack-xs">
+                                        {% if examination_schedule.status %}
+                                            Accepted
+                                        {% else %}
+                                            Pending
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+
+        <h1 style="text-transform: uppercase" class="examination-title">medical examination list</h1>
+        <div class="table-examination">
+            <form method="post" action="{{ url_for('employee_nurse') }}" class="create-examination-form"
+                  id="create-examination-form">
+                <table id="create-examination-table">
+                    <tr>
+                        <th colspan="9" style="background-color: transparent;">
+                            <label for="day_of_exam" style="color: var(--black); margin-right: 20px; font-weight: 500;">Day
+                                of examination</label>
+                            <input type="date" id="day_of_exam" name="day_of_exam" required>
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Full name</th>
+                        <th>Gender</th>
+                        <th>Date of birth</th>
+                        <th>Address</th>
+                    </tr>
+
+                    <tr class="tr-body">
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="ex-btn">
+            <button type="submit" class="btn btn-ex" data-bs-toggle="modal" data-bs-target="#myModal" disabled>Create an
+                examination list
+            </button>
+        </div>
+
+        <div class="appointment-form">
+            <h1 class="appointment-title">Appointment</h1>
+            <div class="form-appointment-content" id="form-appointment-content">
+                <div class="form-appointment">
+                    <section class="form-appointment__container">
+                        <form method="post" action="{{ url_for('appointment') }}" class="form"
+                              id="appointment-form">
+                            <div class="column">
+                                <div class="input-box">
+                                    <label for="firstname">First name<span
+                                            class="text-danger">*</span></label>
+                                    <input
+                                            type="text" name="first_name" id="firstname"
+                                            placeholder="First name" required/>
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="lastname">Last name<span
+                                            class="text-danger">*</span></label>
+                                    <input
+                                            type="text" name="last_name" id="lastname"
+                                            placeholder="Last name" required/>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="input-box">
+                                    <label for="dob">Date of birth<span class="text-danger">*</span></label>
+                                    <input
+                                            type="date"
+                                            name="dob" id="dob" placeholder="Date of birth" required/>
+                                </div>
+
+                                <div class="input-box">
+                                    <label>Gender<span class="text-danger">*</span></label>
+                                    <div class="select-container">
+                                        <select id="gender" name="gender" class="select-box" required>
+                                            <option value="---">---
+                                            </option>
+                                            <option value="Male">Male
+                                            </option>
+                                            <option value="Female"
+                                            >
+                                                Female
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="input-box">
+                                    <label for="email">Email Address<span
+                                            class="text-danger">*</span></label>
+                                    <input
+                                            type="email"
+                                            name="email" id="email" placeholder="Email address" required/>
+                                </div>
+                                <div class="input-box">
+                                    <label for="phone">Phone Number<span
+                                            class="text-danger">*</span></label>
+                                    <input
+                                            type="tel" name="phone_number" id="phone"
+                                            placeholder="Phone number" required/>
+                                </div>
+                            </div>
+
+                            <div class="input-box">
+                                <label for="address">Address<span class="text-danger">*</span></label>
+                                <input
+                                        type="text"
+                                        name="address" id="address" placeholder="Address" required/>
+                            </div>
+
+                            <div class="column">
+                                <div class="input-box">
+                                    <label for="day_of_exam">Day of the examination<span
+                                            class="text-danger">*</span></label>
+                                    <input type="date" name="day_of_exam" id="day_of_exam" required/>
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="time_of_exam">Time of the examination<span
+                                            class="text-danger">*</span></label>
+                                    <input type="time" name="time_of_exam" id="time_of_exam" required/>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn form-appointment__btn" data-bs-toggle="modal"
+                                    data-bs-target="#myModal">
+                                Submit
+                            </button>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'layout/modal.html' %}
+{% endblock %}

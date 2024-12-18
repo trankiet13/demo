@@ -8,8 +8,8 @@
                     <!-- Contact -->
                     <ul class="top-link">
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Doctors</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="{{ url_for('portpolio') }}">Doctors</a></li>
+                        <li><a href="{{ url_for('contact') }}>Contact</a></li>
                         <li><a href="#">FAQ</a></li>
                     </ul>
                     <!-- End Contact -->
@@ -46,11 +46,11 @@
                             <nav class="navigation">
                                 <ul class="nav menu">
                                     <li><a href="/"> Home </a></li>
-                                    <li><a href="#"> Doctor </a></li>
+                                    <li><a href="{{ url_for('portpolio') }}"> Doctor </a></li>
                                     <li><a href="#"> Services </a></li>
                                     <li><a href="#"> Pages </a></li>
-                                    <li><a href="#"> Blogs </a></li>
-                                    <li><a href="#"> Contact Us</a></li>
+                                    <li><a href="{{ url_for('blog') }}"> Blogs  </a></li>
+                                    <li><a href="{{ url_for('contact') }}" > Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -63,7 +63,7 @@
                     </div>
                     <div class="col-lg-2 col-12">
                         <div class="get-quote">
-                            <a href="#" class="btn">Sign in</a>
+                            <a href="/login" class="btn">Sign in</a>
                         </div>
                     </div>
 

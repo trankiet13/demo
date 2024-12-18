@@ -1,0 +1,236 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Appointment{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout/banner.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/customer/appointment.css') }}">
+{% endblock %}
+
+{% block js_body %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/customer/appointment.js') }}"></script>
+    <script>
+        window.onload = function () {
+            const modalTitle = document.querySelector('.modal-title')
+            const modalBody = document.querySelector('.modal-body')
+            const btnConfirm = document.querySelector('.btn-modal-confirm')
+
+            btnConfirm.setAttribute('form', 'appointment-form')
+            modalTitle.innerHTML = 'MAKE AN APPOINTMENT'
+            modalBody.innerHTML = 'Are you sure you want to make an appointment?'
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="banner">
+        <div class="my-grid">
+            <div class="my-row">
+                <div class="my-col-6">
+                    <div class="banner__content">
+                        <h1 class="banner__content--title">Appointment</h1>
+                        <p class="banner__content--des">
+                            Please make an appointment so F&H can grasp your information and serve you in the best way
+                        </p>
+                        <div class="banner__content--btn">
+                            <a href="#form-appointment-content" class="my-btn">Learn More</a>
+                            {% if not current_user.is_authenticated %}
+                                <a href="{{ url_for('authentication') }}" class="my-btn">Sign in</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-col-6">
+                    <div class=" banner__image">
+                        <img src="{{ url_for('static', filename='images/About.svg') }}" alt="About">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-appointment-content" id="form-appointment-content">
+        <div class="form-appointment">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19.459" height="19.46" viewBox="0 0 19.459 19.46"
+                 class="plus-icon plus-icon1 svg replaced-svg">
+                <g id="plus2" opacity="0.18">
+                    <line id="Line_26" data-name="Line 26" y2="19.46" transform="translate(10.379)" fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                    <line id="Line_27" data-name="Line 27" x2="19.46" transform="translate(0 10.379)"
+                          fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                </g>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="19.459" height="19.46" viewBox="0 0 19.459 19.46"
+                 class="plus-icon plus-icon2 svg replaced-svg">
+                <g id="plus2" opacity="0.18">
+                    <line id="Line_26" data-name="Line 26" y2="19.46" transform="translate(10.379)" fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                    <line id="Line_27" data-name="Line 27" x2="19.46" transform="translate(0 10.379)"
+                          fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                </g>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="19.459" height="19.46" viewBox="0 0 19.459 19.46"
+                 class="plus-icon plus-icon3 svg replaced-svg">
+                <g id="plus2" opacity="0.18">
+                    <line id="Line_26" data-name="Line 26" y2="19.46" transform="translate(10.379)" fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                    <line id="Line_27" data-name="Line 27" x2="19.46" transform="translate(0 10.379)"
+                          fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                </g>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="19.459" height="19.46" viewBox="0 0 19.459 19.46"
+                 class="plus-icon plus-icon4 svg replaced-svg">
+                <g id="plus2" opacity="0.18">
+                    <line id="Line_26" data-name="Line 26" y2="19.46" transform="translate(10.379)" fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                    <line id="Line_27" data-name="Line 27" x2="19.46" transform="translate(0 10.379)"
+                          fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                </g>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="19.459" height="19.46" viewBox="0 0 19.459 19.46"
+                 class="plus-icon plus-icon5 svg replaced-svg">
+                <g id="plus2" opacity="0.18">
+                    <line id="Line_26" data-name="Line 26" y2="19.46" transform="translate(10.379)" fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                    <line id="Line_27" data-name="Line 27" x2="19.46" transform="translate(0 10.379)"
+                          fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                </g>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="19.459" height="19.46" viewBox="0 0 19.459 19.46"
+                 class="plus-icon plus-icon6 svg replaced-svg">
+                <g id="plus2" opacity="0.18">
+                    <line id="Line_26" data-name="Line 26" y2="19.46" transform="translate(10.379)" fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                    <line id="Line_27" data-name="Line 27" x2="19.46" transform="translate(0 10.379)"
+                          fill="none"
+                          stroke="#fc5185" stroke-width="2"></line>
+                </g>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="21.955" height="21.955" viewBox="0 0 21.955 21.955"
+                 class="circle-icon circle-icon1 svg replaced-svg">
+                <g id="circle2" fill="none" stroke="#fc5185" stroke-width="2" opacity="0.23">
+                    <circle cx="10.977" cy="10.977" r="10.977" stroke="none"></circle>
+                    <circle cx="10.977" cy="10.977" r="9.977" fill="none"></circle>
+                </g>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="21.955" height="21.955" viewBox="0 0 21.955 21.955"
+                 class="circle-icon circle-icon2 svg replaced-svg">
+                <g id="circle2" fill="none" stroke="#fc5185" stroke-width="2" opacity="0.23">
+                    <circle cx="10.977" cy="10.977" r="10.977" stroke="none"></circle>
+                    <circle cx="10.977" cy="10.977" r="9.977" fill="none"></circle>
+                </g>
+            </svg>
+            <div class="my-grid">
+                <div class="form-top">
+                    <h1 class="form-appointment__title">Appointment</h1>
+                    <div class="form-appointment__line"></div>
+                    <p class="form-appointment__des">
+                        Please schedule an appointment, so we can get information and best serve you.
+                        Please ensure that the information below is accurate, so we can work with you more easily.
+                    </p>
+                </div>
+
+                <div class="my-row" style="align-items: center;">
+                    <div class="my-col-6">
+                        <section class="form-appointment__container">
+                            <form method="post" action="{{ url_for('appointment') }}" class="form" id="appointment-form">
+                                <div class="column">
+                                    <div class="input-box">
+                                        <label for="firstname">First name<span class="text-danger">*</span></label>
+                                        <input {% if current_user.user.first_name %}value="{{ current_user.user.first_name }}"{% endif %}
+                                               type="text" name="first_name" id="firstname" placeholder="First name" required/>
+                                    </div>
+
+                                    <div class="input-box">
+                                        <label for="lastname">Last name<span class="text-danger">*</span></label>
+                                        <input {% if current_user.user.last_name %}value="{{ current_user.user.last_name }}"{% endif %}
+                                               type="text" name="last_name" id="lastname" placeholder="Last name" required/>
+                                    </div>
+                                </div>
+
+                                <div class="column">
+                                    <div class="input-box">
+                                        <label for="dob">Date of birth<span class="text-danger">*</span></label>
+                                        <input {% if current_user.user.dob %}value="{{ current_user.user.dob.strftime('%Y-%m-%d') }}"{% endif %} type="date"
+                                               name="dob" id="dob" placeholder="Date of birth" required/>
+                                    </div>
+
+                                    <div class="input-box">
+                                        <label>Gender<span class="text-danger">*</span></label>
+                                        <div class="select-container">
+                                            <select id="gender" name="gender" class="select-box" required>
+                                                <option value="---" {% if not current_user.user.gender %} selected {% endif %}>---</option>
+                                                <option value="Male" {% if current_user.user.gender == 'Male' %} selected {% endif %}>Male
+                                                </option>
+                                                <option value="Female" {% if current_user.user.gender == 'Female' %} selected {% endif %}>
+                                                    Female
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="column">
+                                    <div class="input-box">
+                                        <label for="email">Email Address<span class="text-danger">*</span></label>
+                                        <input {% if current_user.user.email %}value="{{ current_user.user.email }}"{% endif %} type="email"
+                                               name="email" id="email" placeholder="Email address" required/>
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="phone">Phone Number<span class="text-danger">*</span></label>
+                                        <input {% if current_user.user.phone_number %}value="{{ current_user.user.phone_number }}"{% endif %}
+                                               type="tel" name="phone_number" id="phone" placeholder="Phone number" required/>
+                                    </div>
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="address">Address<span class="text-danger">*</span></label>
+                                    <input {% if current_user.user.address %}value="{{ current_user.user.address }}"{% endif %} type="text"
+                                           name="address" id="address" placeholder="Address" required/>
+                                </div>
+
+                                <div class="column">
+                                    <div class="input-box">
+                                        <label for="day_of_exam">Day of the examination<span class="text-danger">*</span></label>
+                                        <input type="date" name="day_of_exam" id="day_of_exam" required />
+                                    </div>
+
+                                    <div class="input-box">
+                                        <label for="time_of_exam">Time of the examination<span class="text-danger">*</span></label>
+                                        <input type="time" name="time_of_exam" id="time_of_exam" required />
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn form-appointment__btn" data-bs-toggle="modal" data-bs-target="#myModal">
+                                    Submit
+                                </button>
+                            </form>
+                        </section>
+                    </div>
+
+                    <div class="my-col-6">
+                        <div class="form-appointment__image">
+                            <img src="{{ url_for('static', filename='images/Appointment.svg') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'layout/modal.html' %}
+{% endblock %}
