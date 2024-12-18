@@ -1,7 +1,8 @@
 {% extends 'layout/base.html' %}
 
-{% block content %}
+{% block loader %} {% endblock %}
 
+{% block content %}
 {%if current_user.is_authenticated%}
 <h1>XIN CHAO</h1>
 <h3>Chao <span class="text-danger">{{current_user.username}}</span></h3>
@@ -10,7 +11,7 @@
 <h1 class="text-center text-danger mt-2">ĐĂNG NHẬP NGƯỜI DÙNG</h1>
 
 {% if err_msg %}
-    <div class="text-danger">{{ err_msg }}</div>
+<div class="text-danger">{{ err_msg }}</div>
 {% endif %}
 
 <form method="post" action="/login">
