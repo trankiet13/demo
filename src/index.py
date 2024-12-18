@@ -1,7 +1,10 @@
-from  src import app, login, dao
-from flask import render_template, request, redirect
+from  src import app, login, dao, db
+from flask import render_template, request, redirect, url_for
+from flask_login import login_user, logout_user, login_required, current_user
+
+from src.decorators import admin_required
+from src.models import AccountRoleEnum, Account
 from src import admin
-from flask_login import login_user, logout_user
 
 
 @app.route("/")
@@ -17,7 +20,7 @@ def admin_login():
     username = request.form['username']
     password = request.form['password']
 
-    user = dao.auth_user(username = username, password = password)
+    user = dao.auth_user(username = username, password = password, role = AccountRoleEnum.ADMIN)
     if user:
         login_user(user=user)
 

@@ -11,7 +11,7 @@ def auth_user(username, password, role=None):
                           Account.password.__eq__(password))
 
     if role:
-        u = u.filter(Account.user_role.__eq__(role))
+        u = u.filter(Account.role.__eq__(role))
 
     return u.first()
 
