@@ -74,7 +74,7 @@ def notification():
     if not get_flashed_messages():
         return redirect(url_for('index'))
 
-    return render_template(template_name_or_list='notification.html')
+    return render_template(template_name_or_list='noti.html')
 
 
 # --------------------AUTHENTICATION-------------------- #
@@ -89,11 +89,12 @@ def enum_to_string(role):
 
 @logout_required
 def signin():
+    print('user login')
     if request.method.__eq__('POST'):
         next_url = request.form.get('next')
         username_signin = request.form.get('username_signin')
         password_signin = request.form.get('password_signin')
-
+        print(username_signin, password_signin)
         account = services.authenticate(username=username_signin, password=password_signin)
         login_user(account)
 
@@ -123,7 +124,7 @@ def signup():
         token = generate_token(user.email)
         subject = 'Please confirm your email'
         confirm_url = url_for('confirm_email', token=token, _external=True)
-        html = render_template('mail/confirm_email.html', confirm_url=confirm_url)
+        # html = render_template('mail/confirm_email.html', confirm_url=confirm_url)
         # send_email(to=user.email, subject=subject, template=html)
 
         login_user(account)
@@ -171,8 +172,8 @@ def signout():
 
 
 # --------------------CUSTOMER FUNCTIONS-------------------- #
-@login_required
-@check_is_confirmed
+# @login_required
+# @check_is_confirmed
 def appointment():
     if request.method.__eq__('POST'):
         first_name = request.form.get('first_name')
@@ -205,7 +206,7 @@ def appointment():
             'success')
         return redirect(url_for('notification'))
 
-    return render_template(template_name_or_list='customer/appointment.html')
+    return render_template(template_name_or_list='appointment.html')
 
 
 @login_required
