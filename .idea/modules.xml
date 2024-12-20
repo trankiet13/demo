@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../MediPlus_PrivateClinic/.idea/MediPlus_PrivateClinic.iml" filepath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/.idea/MediPlus_PrivateClinic.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/clinicManagement.iml" filepath="$PROJECT_DIR$/.idea/clinicManagement.iml" />
     </modules>
   </component>

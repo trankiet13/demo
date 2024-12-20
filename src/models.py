@@ -321,8 +321,10 @@ if __name__ == '__main__':
         db.session.add_all([account_patient, account_cashier, account_nurse, account_doctor, account_admin])
         db.session.commit()
 
-        user_patient = User(first_name="Patient1", last_name="", email="patient1@gmail.com", account_id=account_patient.id)
-        user_cashier = User(first_name="Cashier1", last_name="", email="cashier1@gmail.com", account_id=account_cashier.id)
+        user_patient = User(first_name="Patient1", last_name="", email="patient1@gmail.com",
+                            account_id=account_patient.id)
+        user_cashier = User(first_name="Cashier1", last_name="", email="cashier1@gmail.com",
+                            account_id=account_cashier.id)
         user_nurse = User(first_name="Nurse1", last_name="", email="nurse1@gmail.com", account_id=account_nurse.id)
         user_doctor = User(first_name="Doctor1", last_name="", email="doctor1@gmail.com", account_id=account_doctor.id)
         user_admin = User(first_name="Admin1", last_name="", email="admin1@gmail.com", account_id=account_admin.id)
