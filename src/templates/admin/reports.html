@@ -7,48 +7,48 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <h1>Báo cáo Doanh thu theo Tháng</h1>
-    <canvas id="revenueChart" width="400" height="200"></canvas>
-    <script>
-        const ctx = document.getElementById('revenueChart').getContext('2d');
-        const revenueChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Ngày 1', 'Ngày 2', 'Ngày 3'], // Thay dữ liệu theo thực tế
-                datasets: [{
-                    label: 'Doanh thu',
-                    data: [120000, 150000, 100000], // Thay dữ liệu thực tế
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+<h1>Báo cáo Doanh thu theo Tháng</h1>
+<canvas id="revenueChart" width="400" height="200"></canvas>
+<script>
+    const ctx = document.getElementById('revenueChart').getContext('2d');
+    const revenueChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Ngày 1', 'Ngày 2', 'Ngày 3'], // Thay dữ liệu theo thực tế
+            datasets: [{
+                label: 'Doanh thu',
+                data: [120000, 150000, 100000], // Thay dữ liệu thực tế
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        });
-    </script>
+        }
+    });
+</script>
 
-    <h1>Báo cáo Sử dụng Thuốc theo Tháng</h1>
-    <canvas id="medicineChart" width="400" height="200"></canvas>
-    <script>
-        const ctx2 = document.getElementById('medicineChart').getContext('2d');
-        const medicineChart = new Chart(ctx2, {
-            type: 'pie',
-            data: {
-                labels: ['Thuốc A', 'Thuốc B', 'Thuốc C'], // Thay dữ liệu theo thực tế
-                datasets: [{
-                    label: 'Số lượng sử dụng',
-                    data: [50, 30, 20], // Thay dữ liệu thực tế
-                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-                    hoverOffset: 4
-                }]
-            }
-        });
-    </script>
+<h1>Báo cáo Sử dụng Thuốc theo Tháng</h1>
+<canvas id="medicineChart" width="400" height="200"></canvas>
+<script>
+    const ctx2 = document.getElementById('medicineChart').getContext('2d');
+    const medicineChart = new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: ['Thuốc A', 'Thuốc B', 'Thuốc C'], // Thay dữ liệu theo thực tế
+            datasets: [{
+                label: 'Số lượng sử dụng',
+                data: [50, 30, 20], // Thay dữ liệu thực tế
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                hoverOffset: 4
+            }]
+        }
+    });
+</script>
 </body>
 </html>

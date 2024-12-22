@@ -2,39 +2,49 @@
 
 {% block content %}
 
-<!-- admin_dashboard.html -->
-<table>
-    <thead>
+    <!-- admin_dashboard.html -->
+    <table>
+        <thead>
         <tr>
             <th>Tên tài khoản</th>
             <th>Email</th>
             <th>Vai trò</th>
             <th>Hành động</th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         {% for account in accounts %}
-        <tr>
-            <td>{{ account.username }}</td>
-            <td>{{ account.user.email }}</td>
-            <td>
-                <form method="POST" action="{{ url_for('update_role', user_id=account.id) }}">
-                    <select name="role" required>
-                        <option value="{{ AccountRoleEnum.PATIENT }}" {% if account.role == AccountRoleEnum.PATIENT %}selected{% endif %}>Bệnh nhân</option>
-                        <option value="{{ AccountRoleEnum.DOCTOR }}" {% if account.role == AccountRoleEnum.DOCTOR %}selected{% endif %}>Bác sĩ</option>
-                        <option value="{{ AccountRoleEnum.NURSE }}" {% if account.role == AccountRoleEnum.NURSE %}selected{% endif %}>Y tá</option>
-                        <option value="{{ AccountRoleEnum.STAFF }}" {% if account.role == AccountRoleEnum.STAFF %}selected{% endif %}>Nhân viên</option>
-                        <option value="{{ AccountRoleEnum.ADMIN }}" {% if account.role == AccountRoleEnum.ADMIN %}selected{% endif %}>Admin</option>
-                    </select>
-                    <button type="submit">Cập nhật</button>
-                </form>
-            </td>
-            <td>
-                <a href="{{ url_for('delete_user', user_id=account.id) }}">Xóa</a>
-            </td>
-        </tr>
+            <tr>
+                <td>{{ account.username }}</td>
+                <td>{{ account.user.email }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('update_role', user_id=account.id) }}">
+                        <select name="role" required>
+                            <option value="{{ AccountRoleEnum.PATIENT }}"
+                                    {% if account.role == AccountRoleEnum.PATIENT %}selected{% endif %}>Bệnh nhân
+                            </option>
+                            <option value="{{ AccountRoleEnum.DOCTOR }}"
+                                    {% if account.role == AccountRoleEnum.DOCTOR %}selected{% endif %}>Bác sĩ
+                            </option>
+                            <option value="{{ AccountRoleEnum.NURSE }}"
+                                    {% if account.role == AccountRoleEnum.NURSE %}selected{% endif %}>Y tá
+                            </option>
+                            <option value="{{ AccountRoleEnum.STAFF }}"
+                                    {% if account.role == AccountRoleEnum.STAFF %}selected{% endif %}>Nhân viên
+                            </option>
+                            <option value="{{ AccountRoleEnum.ADMIN }}"
+                                    {% if account.role == AccountRoleEnum.ADMIN %}selected{% endif %}>Admin
+                            </option>
+                        </select>
+                        <button type="submit">Cập nhật</button>
+                    </form>
+                </td>
+                <td>
+                    <a href="{{ url_for('delete_user', user_id=account.id) }}">Xóa</a>
+                </td>
+            </tr>
         {% endfor %}
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
 {% endblock %}

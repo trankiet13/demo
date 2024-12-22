@@ -10,10 +10,31 @@ from src import admin
 @app.route("/")
 def home():
     return render_template('index.html')
+#
+#
+# def portfolio():
+#     return render_template("portpolio.html")
+#
+#
+# app.add_url_rule("/portpolio", "portpolio", portpolio)
+# def index():
+#     return render_template(template_name_or_list="portpolio.html")
 
 @login.user_loader
 def load_user(user_id):
     return dao.get_user_by_id(user_id)
+
+@app.route('/blog')
+def blog():
+    return render_template(template_name_or_list="blog.html")
+
+@app.route('/contact')
+def contact():
+    return render_template(template_name_or_list="contact.html")
+
+# @app.route('/portpolio')
+# def portpolio():
+#     return render_template(template_name_or_list="portpolio.html")
 
 @app.route('/login-admin', methods=['post'])
 def admin_login():

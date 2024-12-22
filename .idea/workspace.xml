@@ -4,7 +4,54 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="c0400ef4-026b-427b-8c39-7b274b1a2054" name="Changes" comment="Router cac trang" />
+=======
+    <list default="true" id="c0400ef4-026b-427b-8c39-7b274b1a2054" name="Changes" comment="sửa template">
+      <change beforePath="$PROJECT_DIR$/.idea/clinicManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/clinicManagement.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/datepicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/css/datepicker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/magnific-popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/css/magnific-popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/css/normalize.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/owl-carousel.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/css/owl-carousel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/fonts/icofont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/fonts/icofont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/bootstrap-datepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/js/bootstrap-datepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/js/colors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/jquery.nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/js/jquery.nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/map-active.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/js/map-active.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/owl-carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/js/owl-carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/js/steller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/js/steller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/admin/reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/admin/reports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/admin_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/admin_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/layout/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/layout/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/layout/non_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/layout/non_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/.idea/MediPlus_PrivateClinic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/.idea/MediPlus_PrivateClinic.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/src/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/src/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/src/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/src/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/src/templates/layout/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/src/templates/layout/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/src/templates/layout/non_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../MediPlus_PrivateClinic/src/templates/layout/non_base.html" afterDir="false" />
+    </list>
+>>>>>>> origin/optional
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +60,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
         <option value="HTML File" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -29,23 +88,35 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
+<<<<<<< HEAD
     &quot;assignee&quot;: &quot;trankiet13&quot;
+=======
+    &quot;assignee&quot;: &quot;longnguyen021204&quot;
+>>>>>>> origin/optional
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ChiTon16/ClinicManagement.git&quot;,
+<<<<<<< HEAD
     &quot;accountId&quot;: &quot;2c8def3b-30c2-41df-8dae-237388051e92&quot;
   }
 }</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
+=======
+    &quot;accountId&quot;: &quot;501e6bfc-9e23-4ff2-9d28-cb7b0ce91bfe&quot;
+  }
+}</component>
+>>>>>>> origin/optional
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2pe1v7M1a57PtJqfLohmDlzs2DC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -55,6 +126,8 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "Python.__init__.executor": "Run",
     "Python.admin.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.index (1).executor": "Run",
     "Python.index.executor": "Run",
     "Python.models.executor": "Run",
     "Python.test.executor": "Run",
@@ -62,15 +135,30 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+<<<<<<< HEAD
     "last_opened_file_path": "D:/Cilic/ClinicManagement",
     "settings.editor.selected.configurable": "configurable.group.project"
+=======
+    "last_opened_file_path": "D:/GitClone/ClinicManagement/src/static/img",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.intellij.python.templateLanguages.PyTemplateLanguageModulesConfigurable",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> origin/optional
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitClone\ClinicManagement\src\static\img" />
+      <recent name="D:\GitClone\ClinicManagement\src\static\js" />
+      <recent name="D:\GitClone\ClinicManagement\src\static\css" />
       <recent name="D:\clinicManagement\src\templates\layout" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitClone\ClinicManagement\src\static" />
       <recent name="D:\clinicManagement\src\templates\admin" />
       <recent name="D:\clinicManagement\src\templates" />
       <recent name="D:\clinicManagement\src\static\css" />
@@ -78,8 +166,8 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.index">
-    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="clinicManagement" />
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MediPlus_PrivateClinic" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -87,11 +175,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../MediPlus_PrivateClinic/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/__init__.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../MediPlus_PrivateClinic/src/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -100,8 +189,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="admin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="clinicManagement" />
+    <configuration name="index (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="clinic-ease-website" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -109,11 +198,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../clinic-ease-website/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/admin.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../clinic-ease-website/src/index.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,6 +225,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/index.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -157,6 +248,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/models.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -179,6 +271,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -191,17 +284,22 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.index" />
+        <item itemvalue="Python.index (1)" />
+        <item itemvalue="Python.app" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.models" />
-        <item itemvalue="Python.admin" />
-        <item itemvalue="Python.__init__" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+<<<<<<< HEAD
         <option value="bundled-python-sdk-fb887030ada0-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.21565.199" />
+=======
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
+        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
+>>>>>>> origin/optional
       </set>
     </attachedChunks>
   </component>
@@ -213,7 +311,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733111954526</updated>
+      <workItem from="1734537091415" duration="3529000" />
+      <workItem from="1734586725114" duration="8611000" />
+      <workItem from="1734659969237" duration="2640000" />
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00001" summary="Router cac trang">
       <option name="closed" value="true" />
       <created>1734793260253</created>
@@ -229,10 +331,28 @@
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1734856758168</updated>
+=======
+    <task id="LOCAL-00001" summary="sửa template">
+      <option name="closed" value="true" />
+      <created>1734538653932</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734538653932</updated>
+    </task>
+    <task id="LOCAL-00002" summary="sửa template">
+      <option name="closed" value="true" />
+      <created>1734540574974</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734540574974</updated>
+>>>>>>> origin/optional
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -248,5 +368,18 @@
     <MESSAGE value="sửa template" />
     <MESSAGE value="Router cac trang" />
     <option name="LAST_COMMIT_MESSAGE" value="Router cac trang" />
+=======
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="sửa template" />
+    <option name="LAST_COMMIT_MESSAGE" value="sửa template" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ClinicManagement$index.coverage" NAME="index Coverage Results" MODIFIED="1734662504845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ClinicManagement$app.coverage" NAME="app Coverage Results" MODIFIED="1734537665393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../MediPlus_PrivateClinic/src" />
+    <SUITE FILE_PATH="coverage/ClinicManagement$index__1_.coverage" NAME="index (1) Coverage Results" MODIFIED="1734661497378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../clinic-ease-website/src" />
+>>>>>>> origin/optional
   </component>
 </project>
