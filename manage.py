@@ -10,15 +10,6 @@ from src import admin
 @app.route("/")
 def home():
     return render_template('index.html')
-#
-#
-# def portfolio():
-#     return render_template("portpolio.html")
-#
-#
-# app.add_url_rule("/portpolio", "portpolio", portpolio)
-# def index():
-#     return render_template(template_name_or_list="portpolio.html")
 
 @login.user_loader
 def load_user(user_id):
@@ -35,6 +26,10 @@ def contact():
 # @app.route('/portpolio')
 # def portpolio():
 #     return render_template(template_name_or_list="portpolio.html")
+
+@app.route('/employee/login.html')
+def employee_login():
+    return render_template(template_name_or_list="/employee/login.html")
 
 @app.route('/login-admin', methods=['post'])
 def admin_login():
